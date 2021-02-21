@@ -1,0 +1,12 @@
+{
+  "name": "nightspy",
+  "displayName": "nightspy",
+  "expo": {
+    "name": "nightspy",
+    "slug": "nightspy",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
