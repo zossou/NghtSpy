@@ -1,19 +1,23 @@
 import React, { useState } from "react";
-import { View, Picker, Text , StyleSheet, TouchableOpacity, Linking  , TextInput } from "react-native";
+import { View, Picker, Text , StyleSheet, TouchableOpacity, Button  , TextInput } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
-import A from 'react-native-a'
+import A from 'react-native-a';
+import { useNavigation } from '@react-navigation/native';
 
-const App = () => {
+
+
+const SignInPhone = ( {navigation} ) => {
     
     const [selectedValue, setSelectedValue] = useState("java");
     const [number, onChangeNumber] = React.useState(null);
-    const url="https://google.com"
+    const url="https://google.com";
+    const navigation_ = useNavigation();
 
 
       return (
           
         <View style={styles.container}>
-            <TouchableOpacity  >
+            <TouchableOpacity onPress={() => { navigation_.goBack(); }} >
                 <Icon name="angle-left" size={50} style={styles.iconBack} />
             </TouchableOpacity>
           <View style={styles.containerPhone}>
@@ -42,7 +46,7 @@ const App = () => {
                     your number changes.</A>
             </Text>        
             
-            <TouchableOpacity style={styles.button} >
+            <TouchableOpacity style={styles.button} onPress = { () => navigation.navigate('TypingEmail') } >
                 <Text style={{color : "white" , fontSize: 25 ,}}>Continuer</Text>
             </TouchableOpacity>
 
@@ -76,7 +80,7 @@ const App = () => {
     },
 
     Title : {
-        fontSize: 20 ,
+        fontSize: 25 ,
     },
 
     DescriptionText : {
@@ -126,5 +130,5 @@ const App = () => {
     
   });
   
-  export default App;
+  export default SignInPhone;
   

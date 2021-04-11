@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import A from 'react-native-a'
 
 
-const signin = () => {
+const signin = ({navigation}) => {
     return (
             <View style={styles.container}>
                 <View style={styles.countContainer}>
@@ -30,7 +30,7 @@ const signin = () => {
                     <Text style={styles.btnText}>SIGN IN WITH FACEBOOK</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button} >
+                <TouchableOpacity style={styles.button} onPress = {() => navigation.navigate('SignInPhone')} >
                 <Icon name="wechat" size={24} style={styles.icon} />
                     <Text style={styles.btnText}>SIGN IN WITH PHONE NUMBER</Text>
                 </TouchableOpacity>
